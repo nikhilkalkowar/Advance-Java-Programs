@@ -1,0 +1,12 @@
+127.0.0.1 - - [18/Mar/2024:17:55:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:17:55:19 +0530] "GET /ProductManagmentApp/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:17:55:19 +0530] "GET /ProductManagmentApp/jaishreeram.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:17:55:19 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:17:55:25 +0530] "GET /ProductManagmentApp/productlist.jsp HTTP/1.1" 500 249320
+127.0.0.1 - - [18/Mar/2024:18:01:03 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:18:01:07 +0530] "GET /ProductManagmentApp/productlist.jsp HTTP/1.1" 500 249320
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:18:02:21 +0530] "POST /ProductManagmentApp/AddProductServlet HTTP/1.1" 200 3565
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:18:02:31 +0530] "GET /ProductManagmentApp/productlist.jsp HTTP/1.1" 500 249320
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:18:07:08 +0530] "POST /ProductManagmentApp/AddProductServlet HTTP/1.1" 500 249369
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:18:07:25 +0530] "GET /ProductManagmentApp/add-product.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Mar/2024:18:07:32 +0530] "GET /ProductManagmentApp/productlist.jsp HTTP/1.1" 500 249323

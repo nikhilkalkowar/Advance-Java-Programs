@@ -1,0 +1,10 @@
+127.0.0.1 - - [24/Mar/2024:16:09:57 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:09:57 +0530] "GET /ProductManagementApp/ HTTP/1.1" 200 2952
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:09:58 +0530] "GET /ProductManagementApp/formvalidation.js HTTP/1.1" 200 1337
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:09:58 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:10:46 +0530] "POST /ProductManagementApp/AddProductServlet HTTP/1.1" 200 2988
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:10:53 +0530] "GET /ProductManagementApp/productList.jsp HTTP/1.1" 200 1593
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:10:53 +0530] "GET /ProductManagementApp/logo.png HTTP/1.1" 404 784
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:10:53 +0530] "GET /ProductManagementApp/styles.css HTTP/1.1" 200 807
+127.0.0.1 - - [24/Mar/2024:16:13:34 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [24/Mar/2024:16:13:35 +0530] "GET /Calculator_Application/ HTTP/1.1" 200 2305

@@ -1,0 +1,156 @@
+package com.sathya.servlet;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.io.IOUtils;
+
+public class ProductDao {
+	
+	@SuppressWarnings("finally")
+	public static int save(Product product)
+	{
+		Connection connection =  null;
+		PreparedStatement preparedStatement = null;
+		
+		int count = 0;
+		
+		try {
+			connection = DbConnection.createconnection();
+			
+			preparedStatement = connection.prepareStatement("insert into pro values(?,?,?,?,?,?,?,?,?,?)");
+			
+			preparedStatement.setString(1, product.getProId());
+			preparedStatement.setString(2, product.getProName());
+			preparedStatement.setDouble(3, product.getProPrice());
+			preparedStatement.setString(4, product.getProBrand());
+			preparedStatement.setString(5, product.getProMadeIn());
+			preparedStatement.setDate(6, product.getProMfg());
+			preparedStatement.setDate(7, product.getProExp());
+			preparedStatement.setBytes(8, product.getProImage());
+			preparedStatement.setBytes(9, product.getAudio());
+			preparedStatement.setBytes(9, product.getVideo());
+			
+			
+			count = preparedStatement.executeUpdate();
+			
+		}
+		
+		
+		
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+			
+		}
+		finally {
+			try {
+				if(connection!=null && preparedStatement!=null)
+				{
+					connection.close();
+				}
+				
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			return count;
+			
+			
+		}
+	}
+		
+		public static List<Product> findAll() {
+			List<Product> p = new ArrayList<Product>();
+			
+			try(Connection connection1 = DbConnection.createconnection();
+				PreparedStatement statement = connection1.prepareStatement("Select * from pro ")) {
+				
+				ResultSet resultset = statement.executeQuery();
+				
+				while(resultset.next()) 
+				{
+					Product product = new Product();
+					product.setProId(resultset.getString("proId"));
+					product.setProName(resultset.getString("proName"));
+					product.setProPrice(Double.parseDouble(resultset.getString("proPrice")));
+					product.setProBrand(resultset.getString("proBrand"));
+					product.setProMadeIn(resultset.getString("proMadeIn"));
+					product.setProMfg(resultset.getDate("proMfg"));
+					product.setProExp(resultset.getDate("proExp"));
+					product.setProImage(resultset.getBytes(8));
+					p.add(product);
+				}
+				
+			}
+			catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return p;
+			
+		}
+
+		public static  int deleteById(String proId)
+		{
+			int count=0;
+			
+			//try with resources
+			
+			try(Connection connection=DbConnection.createconnection();
+				PreparedStatement preparedStatement=connection.prepareStatement("delete from pro where proId=?"))
+			{
+				//Set the Parameter
+				
+				preparedStatement.setString(1, proId);
+				
+				//execute the query
+				
+				count=preparedStatement.executeUpdate();
+			}
+			catch(SQLException e)
+			{
+				e.getStackTrace();
+			}
+			
+			return count;
+		}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
